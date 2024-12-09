@@ -1,21 +1,19 @@
 package order
 
-import (
-	"time"
-)
+import "time"
 
 type OrderDTO struct {
-	ID         uint64         `json:"id"`
-	CustomerID uint64         `json:"customer_id"`
-	Items      []OrderItemDTO `json:"items"`
-	Status     string         `json:"status"`
-	CreatedAt  time.Time      `json:"created_at"`
+	ID         uint64
+	CustomerID uint64
+	Items      []OrderItemDTO
+	Status     string
+	CreatedAt  time.Time
 }
 
 type OrderItemDTO struct {
-	ProductCode string  `json:"product_code"`
-	UnitPrice   float32 `json:"unit_price"`
-	Quantity    int32   `json:"quantity"`
+	ProductCode string
+	UnitPrice   float32
+	Quantity    int32
 }
 
 type CustomerEntity struct {

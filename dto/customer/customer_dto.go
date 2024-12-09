@@ -1,8 +1,6 @@
 package customer
 
-import (
-	"time"
-)
+import "time"
 
 type CustomerDTO struct {
 	ID        uint64
