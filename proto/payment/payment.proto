@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package payment;
+
+option go_package = "grpc/payment;payment";
+
+service Payment {
+    rpc Charge(ChargeRequest) returns (ChargeResponse){}
+}
+
+message ChargeRequest {
+    uint64 customer_id = 1;
+    uint64 order_id = 2;
+    float total_price = 3;
+}
+
+message ChargeResponse {
+    string status = 1;
+    string message = 2;
+}
