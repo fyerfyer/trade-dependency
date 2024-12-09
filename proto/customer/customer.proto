@@ -20,6 +20,7 @@ message CustomerEntity {
     string name = 2;
     string status = 3;
     float balance = 4;
+    uint64 create_at = 5;
 }
 
 message CreateCustomerRequest {
@@ -44,7 +45,7 @@ message DeactivateCustomerRequest {
 }
 
 message DeactivateCustomerResponse {
-    string status = 1;
+    bool success = 1;
 }
 
 message ActivateCustomerRequest {
@@ -52,7 +53,7 @@ message ActivateCustomerRequest {
 }
 
 message ActivateCustomerResponse {
-    string status = 1;
+    bool success = 1;
 }
 
 message SubmitOrderRequest {

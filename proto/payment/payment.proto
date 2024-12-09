@@ -8,10 +8,19 @@ service Payment {
     rpc Charge(ChargeRequest) returns (ChargeResponse){}
 }
 
-message ChargeRequest {
+message CustomerEntity {
     uint64 customer_id = 1;
-    uint64 order_id = 2;
-    float total_price = 3;
+    float balance = 2;
+}
+
+message OrderEntity {
+    uint64 order_id = 1;
+    float total_price = 2;
+}
+
+message ChargeRequest {
+    CustomerEntity customer = 1;
+    OrderEntity order = 2;
 }
 
 message ChargeResponse {

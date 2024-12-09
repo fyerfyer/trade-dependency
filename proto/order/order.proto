@@ -9,8 +9,13 @@ service Order {
     rpc ProcessOrder(ProcessOrderRequest) returns (ProcessOrderResponse);
 }
 
-message ProcessItemsRequest {
+message CustomerEntity {
     uint64 customer_id = 1;
+    float balance = 2;
+}
+
+message ProcessItemsRequest {
+    CustomerEntity customer = 1;
     repeated OrderItem order_items = 2;
 }
 
@@ -26,13 +31,13 @@ message OrderItem {
 
 message OrderEntity {
     uint64 order_id = 1;
-    uint64 customer_id = 2;
-    repeated OrderItem order_items = 3;
-    string status = 4;
+    repeated OrderItem order_items = 2;
+    string status = 3;
 }
 
 message ProcessOrderRequest {
-    OrderEntity order = 1;
+    CustomerEntity customer = 1;
+    OrderEntity order = 2;
 }
 
 message ProcessOrderResponse {
