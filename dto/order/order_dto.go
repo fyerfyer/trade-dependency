@@ -18,7 +18,7 @@ type OrderItemDTO struct {
 
 type CustomerEntity struct {
 	CustomerID uint64
-	balance    float32
+	Balance    float32
 }
 
 type OrderEntity struct {
