@@ -1,6 +1,8 @@
 package order
 
-import "time"
+import (
+	"time"
+)
 
 type OrderDTO struct {
 	ID         uint64         `json:"id"`
@@ -16,8 +18,19 @@ type OrderItemDTO struct {
 	Quantity    int32   `json:"quantity"`
 }
 
+type CustomerEntity struct {
+	CustomerID uint64
+	balance    float32
+}
+
+type OrderEntity struct {
+	OrderID uint64
+	Items   []*OrderItemDTO
+	status  string
+}
+
 type ProcessItemsRequest struct {
-	CustomerId uint64
+	Customer   CustomerEntity
 	OrderItems []*OrderItemDTO
 }
 
@@ -26,7 +39,8 @@ type ProcessItemsResponse struct {
 }
 
 type ProcessOrderRequest struct {
-	Order OrderDTO
+	Customer CustomerEntity
+	Order    OrderEntity
 }
 
 type ProcessOrderResponse struct {

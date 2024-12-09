@@ -34,7 +34,7 @@ type DeactivateCustomer struct {
 }
 
 type DeactivateCustomerResponse struct {
-	Status string
+	Success bool
 }
 
 type ActivateCustomer struct {
@@ -42,7 +42,7 @@ type ActivateCustomer struct {
 }
 
 type ActivateCustomerResponse struct {
-	Status string
+	Success bool
 }
 
 type OrderItem struct {
@@ -72,9 +72,10 @@ type PayOrderResponse struct {
 }
 
 type Order struct {
-	OrderID uint64
-	Items   []*OrderItem
-	Status  string
+	OrderID   uint64
+	Items     []*OrderItem
+	Status    string
+	CreatedAt time.Time
 }
 
 type GetUnpaidOrdersRequest struct {

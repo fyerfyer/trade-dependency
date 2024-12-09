@@ -8,10 +8,19 @@ type PaymentDTO struct {
 	Message    string  `json:"message"`
 }
 
-type ChargeRequestDTO struct {
+type CustomerEntity struct {
 	CustomerID uint64
-	OrderId    uint64
+	balance    float32
+}
+
+type OrderEntity struct {
+	OrderID    uint64
 	TotalPrice float32
+}
+
+type ChargeRequestDTO struct {
+	Customer CustomerEntity
+	Order    OrderEntity
 }
 
 type ChargeResponseDTO struct {
