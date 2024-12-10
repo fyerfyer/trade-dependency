@@ -34,7 +34,7 @@ type ProcessItemsRequest struct {
 
 type ProcessOrderRequest struct {
 	Customer CustomerEntity
-	Order    OrderEntity
+	OrderID  uint64
 }
 
 type GetUnpaidOrdersRequest struct {

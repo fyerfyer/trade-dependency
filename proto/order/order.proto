@@ -38,7 +38,7 @@ message OrderEntity {
 
 message ProcessOrderRequest {
     CustomerEntity customer = 1;
-    OrderEntity order = 2;
+    uint64 order_id = 2;
 }
 
 message ProcessOrderResponse {
