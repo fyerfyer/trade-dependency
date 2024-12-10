@@ -44,3 +44,11 @@ type ProcessOrderRequest struct {
 type ProcessOrderResponse struct {
 	Message string
 }
+
+type GetUnpaidOrdersRequest struct {
+	CustomerID uint64
+}
+
+type GetUnpaidOrdersResponse struct {
+	Orders []OrderEntity
+}
