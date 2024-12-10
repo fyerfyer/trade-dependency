@@ -24,7 +24,7 @@ type CustomerEntity struct {
 type OrderEntity struct {
 	OrderID uint64
 	Items   []*OrderItemDTO
-	status  string
+	Status  string
 }
 
 type ProcessItemsRequest struct {
