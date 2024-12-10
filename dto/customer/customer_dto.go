@@ -46,21 +46,10 @@ type SubmitOrderRequest struct {
 	OrderItems   []*OrderItem
 }
 
-type SubmitOrderResponse struct {
-	Success bool
-	Message string
-}
-
 type PayOrderRequest struct {
 	CustomerName string
 	OrderID      uint64
 }
-
-type PayOrderResponse struct {
-	Success bool
-	Message string
-}
-
 type Order struct {
 	OrderID   uint64
 	Items     []*OrderItem
