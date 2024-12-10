@@ -27,7 +27,7 @@ type GetCustomerResponse struct {
 	Customer *CustomerDTO
 }
 
-type DeactivateCustomer struct {
+type DeactivateCustomerRequest struct {
 	CustomerName string
 }
 
@@ -35,7 +35,7 @@ type DeactivateCustomerResponse struct {
 	Success bool
 }
 
-type ActivateCustomer struct {
+type ActivateCustomerRequest struct {
 	CustomerName string
 }
 
