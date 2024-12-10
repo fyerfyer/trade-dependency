@@ -46,7 +46,7 @@ message ProcessOrderResponse {
 }
 
 message GetUnpaidOrdersRequest {
-    string customer_name = 1;
+    uint64 customer_id = 1;
 }
 
 message GetUnpaidOrdersResponse {

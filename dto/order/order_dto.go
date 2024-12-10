@@ -38,7 +38,7 @@ type ProcessOrderRequest struct {
 }
 
 type GetUnpaidOrdersRequest struct {
-	CustomerName string
+	CustomerID uint64
 }
 
 type GetUnpaidOrdersResponse struct {
