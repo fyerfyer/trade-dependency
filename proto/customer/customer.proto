@@ -88,14 +88,6 @@ message Order {
     string status = 3;
 }
 
-message GetUnpaidOrdersRequest {
-    uint64 customer_id = 1;
-}
-
-message GetUnpaidOrdersResponse {
-    repeated Order unpaid_orders = 1;
-}
-
 message StoreBalanceRequest {
     string customer_name = 1;
     float balance = 2;
@@ -103,4 +95,12 @@ message StoreBalanceRequest {
 
 message StoreBalanceResponse {
     string message = 1;
+}
+
+message GetUnpaidOrdersRequest {
+    uint64 customer_id = 1;
+}
+
+message GetUnpaidOrdersResponse {
+    repeated Order unpaid_orders = 1;
 }

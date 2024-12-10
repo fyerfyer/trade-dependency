@@ -36,19 +36,19 @@ message OrderEntity {
     string status = 3;
 }
 
-message ProcessOrderRequest {
-    CustomerEntity customer = 1;
-    uint64 order_id = 2;
-}
-
-message ProcessOrderResponse {
-    string message = 1;
-}
-
 message GetUnpaidOrdersRequest {
     uint64 customer_id = 1;
 }
 
 message GetUnpaidOrdersResponse {
     repeated OrderEntity orders = 1;
+}
+
+message ProcessOrderResponse {
+    string message = 1;
+}
+
+message ProcessOrderRequest {
+    CustomerEntity customer = 1;
+    uint64 order_id = 2;
 }
