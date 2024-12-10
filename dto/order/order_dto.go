@@ -32,17 +32,9 @@ type ProcessItemsRequest struct {
 	OrderItems []*OrderItemDTO
 }
 
-type ProcessItemsResponse struct {
-	Message string
-}
-
 type ProcessOrderRequest struct {
 	Customer CustomerEntity
 	Order    OrderEntity
-}
-
-type ProcessOrderResponse struct {
-	Message string
 }
 
 type GetUnpaidOrdersRequest struct {

@@ -18,12 +18,7 @@ type OrderEntity struct {
 	TotalPrice float32
 }
 
-type ChargeRequestDTO struct {
+type ChargeRequest struct {
 	Customer CustomerEntity
 	Order    OrderEntity
-}
-
-type ChargeResponseDTO struct {
-	Status  string
-	Message string
 }

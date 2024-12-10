@@ -31,16 +31,8 @@ type DeactivateCustomerRequest struct {
 	CustomerName string
 }
 
-type DeactivateCustomerResponse struct {
-	Success bool
-}
-
 type ActivateCustomerRequest struct {
 	CustomerName string
-}
-
-type ActivateCustomerResponse struct {
-	Success bool
 }
 
 type OrderItem struct {
@@ -87,8 +79,4 @@ type GetUnpaidOrdersResponse struct {
 type StoreBalanceRequest struct {
 	CustomerName string
 	Balance      float32
-}
-
-type StoreBalanceResponse struct {
-	Message string
 }
