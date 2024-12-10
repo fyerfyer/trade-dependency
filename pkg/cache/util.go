@@ -23,10 +23,10 @@ func LookUpOrderInCache(cache Cache, id uint64, status string) (bool, *order.Ord
 	return true, order
 }
 
-func LookUpCustomerInCache(cache Cache, id uint64) (bool, *customer.CustomerDTO) {
+func LookUpCustomerInCache(cache Cache, name string) (bool, *customer.CustomerDTO) {
 	var customer *customer.CustomerDTO
-	if cache.Exists(GetCustomerKey(id)) {
-		data, err := cache.Get(GetCustomerKey(id))
+	if cache.Exists(GetCustomerKey(name)) {
+		data, err := cache.Get(GetCustomerKey(name))
 		if err != nil {
 			return false, nil
 		}
@@ -38,8 +38,8 @@ func LookUpCustomerInCache(cache Cache, id uint64) (bool, *customer.CustomerDTO)
 	return true, customer
 }
 
-func GetCustomerKey(id uint64) string {
-	return fmt.Sprintf("Customer_%v", id)
+func GetCustomerKey(name string) string {
+	return "Customer_" + name
 }
 
 func GetOrderKey(id uint64, status string) string {
