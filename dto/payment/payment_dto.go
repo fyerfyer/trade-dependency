@@ -22,3 +22,11 @@ type ChargeRequest struct {
 	Customer CustomerEntity
 	Order    OrderEntity
 }
+
+type GetPaymentRequest struct {
+	CustomerID uint64
+}
+
+type GetPaymentResponse struct {
+	Payment PaymentDTO
+}

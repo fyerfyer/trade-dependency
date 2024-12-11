@@ -5,7 +5,8 @@ package payment;
 option go_package = "grpc/payment;payment";
 
 service Payment {
-    rpc Charge(ChargeRequest) returns (ChargeResponse){}
+    rpc Charge(ChargeRequest) returns (ChargeResponse);
+    rpc GetPayment(GetPaymentRequest) returns (GetPaymentResponse);
 }
 
 message CustomerEntity {
@@ -26,4 +27,20 @@ message ChargeRequest {
 message ChargeResponse {
     string status = 1;
     string message = 2;
+}
+
+message PaymentEntity {
+    uint64 customer_id = 1;
+    uint64 order_id = 2;
+    float  total_price = 3;
+    string status = 4;
+    string message = 5;
+}
+
+message GetPaymentRequest {
+    uint64 customer_id = 1;
+}
+
+message GetPaymentResponse {
+    PaymentEntity payment = 1;
 }

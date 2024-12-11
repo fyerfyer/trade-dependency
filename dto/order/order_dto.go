@@ -39,6 +39,14 @@ type ProcessOrderRequest struct {
 	OrderID  uint64
 }
 
+type GetOrderRequest struct {
+	CustomerID uint64
+}
+
+type GetOrderResponse struct {
+	Orders []OrderEntity
+}
+
 type GetUnpaidOrdersRequest struct {
 	CustomerID uint64
 }

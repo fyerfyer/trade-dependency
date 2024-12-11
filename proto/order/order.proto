@@ -7,6 +7,7 @@ option go_package = "grpc/order;order";
 service Order {
     rpc ProcessItems(ProcessItemsRequest) returns (ProcessItemsResponse);
     rpc ProcessOrder(ProcessOrderRequest) returns (ProcessOrderResponse);
+    rpc GetOrder(GetOrderRequest) returns (GetOrderResponse);
     rpc GetUnpaidOrders(GetUnpaidOrdersRequest) returns (GetUnpaidOrdersResponse);
 }
 
@@ -36,14 +37,6 @@ message OrderEntity {
     string status = 3;
 }
 
-message GetUnpaidOrdersRequest {
-    uint64 customer_id = 1;
-}
-
-message GetUnpaidOrdersResponse {
-    repeated OrderEntity orders = 1;
-}
-
 message ProcessOrderResponse {
     string message = 1;
 }
@@ -51,4 +44,20 @@ message ProcessOrderResponse {
 message ProcessOrderRequest {
     CustomerEntity customer = 1;
     uint64 order_id = 2;
+}
+
+message GetOrderRequest {
+    uint64 customer_id = 1;
+}
+
+message GetOrderResponse {
+    repeated OrderEntity orders = 1;
+}
+
+message GetUnpaidOrdersRequest {
+    uint64 customer_id = 1;
+}
+
+message GetUnpaidOrdersResponse {
+    repeated OrderEntity orders = 1;
 }
