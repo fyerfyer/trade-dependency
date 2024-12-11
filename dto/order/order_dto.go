@@ -24,9 +24,10 @@ type CustomerEntity struct {
 }
 
 type OrderEntity struct {
-	OrderID uint64
-	Items   []*OrderItemDTO
-	Status  string
+	OrderID   uint64
+	Items     []*OrderItemDTO
+	Status    string
+	CreatedAt time.Time
 }
 
 type ProcessItemsRequest struct {
@@ -41,10 +42,11 @@ type ProcessOrderRequest struct {
 
 type GetOrderRequest struct {
 	CustomerID uint64
+	Status     string
 }
 
 type GetOrderResponse struct {
-	Orders []OrderEntity
+	Order OrderEntity
 }
 
 type GetUnpaidOrdersRequest struct {

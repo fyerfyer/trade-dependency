@@ -35,6 +35,7 @@ message OrderEntity {
     uint64 order_id = 1;
     repeated OrderItem order_items = 2;
     string status = 3;
+    uint64 created_at = 4;
 }
 
 message ProcessOrderResponse {
@@ -48,10 +49,11 @@ message ProcessOrderRequest {
 
 message GetOrderRequest {
     uint64 customer_id = 1;
+    string status = 2;
 }
 
 message GetOrderResponse {
-    repeated OrderEntity orders = 1;
+    OrderEntity order = 1;
 }
 
 message GetUnpaidOrdersRequest {
