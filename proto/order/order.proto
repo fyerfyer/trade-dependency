@@ -35,7 +35,7 @@ message OrderEntity {
     uint64 order_id = 1;
     repeated OrderItem order_items = 2;
     string status = 3;
-    uint64 created_at = 4;
+    int64 created_at = 4;
 }
 
 message ProcessOrderResponse {
