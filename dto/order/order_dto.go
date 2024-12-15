@@ -41,8 +41,8 @@ type ProcessOrderRequest struct {
 }
 
 type GetOrderRequest struct {
-	CustomerID uint64
-	Status     string
+	OrderID uint64
+	Status  string
 }
 
 type GetOrderResponse struct {
