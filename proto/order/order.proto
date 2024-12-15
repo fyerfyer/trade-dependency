@@ -49,7 +49,6 @@ message ProcessOrderRequest {
 
 message GetOrderRequest {
     uint64 order_id = 1;
-    string status = 2;
 }
 
 message GetOrderResponse {
